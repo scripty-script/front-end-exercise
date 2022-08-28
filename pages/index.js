@@ -29,7 +29,7 @@ export default function Home({ overview, trending }) {
                     <div className='absolute right-0 h-full bg-gradient-to-l from-black to-transparent w-2/5'></div>
                     <Header />
                     <section className='container pt-32'>
-                        <div className='transform w-1/2'>
+                        <div className='transform lg:w-1/2'>
                             <h1 className='lg:text-[5rem] text-5xl font-bold'>{overview.title}</h1>
                             <dl className="text-xs flex items-center row-start-2">
                                 <dt className="sr-only">Reviews</dt>
