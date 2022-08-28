@@ -1,10 +1,20 @@
 import Link from 'next/link'
+import { useEffect, useState } from 'react';
+
 export default function Header() {
+    const [y, setY] = useState(0);
+
+    useEffect(() => {
+        document.onscroll = (e) => {
+            setY(window.scrollY);
+        };
+    }, [])
+
     return (
-        <header>
-            <div className='container mx-auto flex justify-between items-center py-4'>
-                <h1 className='z-10 text-2xl font-bold'>AnimeBinge</h1>
-                <nav className='z-10 hidden md:block'>
+        <header className={`z-10 fixed inset-x-0 top-0 ${y > 0 ? 'bg-[#1A1A1A]' : 'backdrop-blur-sm bg-transparent'}  transition-colors duration-500`}>
+            <div className='container flex justify-between items-center py-4'>
+                <h1 className='text-2xl font-bold'>AnimeBinge</h1>
+                <nav className='hidden md:block'>
                     <ul className='flex space-x-4'>
                         <li>
                             <Link href={"#home"}>
